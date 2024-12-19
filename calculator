@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #9ec2e7;
+                overflow: hidden;
+                transition: background-color 0.5s ease;
+            }
+            #calculator {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+            input[type="text"] {
+                width: 85%;
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                border: 4px solid #000;
+                border-radius: 5px;
+                outline: none;
+            }
+            button {
+                width: 23%;
+                padding: 10px;
+                margin: 5px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                background-color: #040404;
+                color: #c0cddb;
+                cursor: pointer;
+                transition: transform 0.2s, background-color 0.3s ease;
+            }
+            button:hover {
+                background-color: rgb(57, 78, 105);
+                border-radius: 5px;
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <input type="text" id="result" enable>
+            <div>
+                <button onclick="clearResult()">C</button>
+                <button onclick="appendToResult('+')">+</button>
+                <button onclick="appendToResult('-')">-</button>
+                <button onclick="calculateResult()">=</button>
+                <button onclick="appendToResult('/')">/</button>
+                <button onclick="appendToResult('*')">*</button>
+            </div>
+            <div>
+                <button onclick="appendToResult('7')">7</button>
+                <button onclick="appendToResult('8')">8</button>
+                <button onclick="appendToResult('9')">9</button>
+            </div>
+            <div>
+                <button onclick="appendToResult('4')">4</button>
+                <button onclick="appendToResult('5')">5</button>
+                <button onclick="appendToResult('6')">6</button>
+            </div>
+            <div>
+                <button onclick="appendToResult('1')">1</button>
+                <button onclick="appendToResult('2')">2</button>
+                <button onclick="appendToResult('3')">3</button>
+            </div>
+            <div>
+                <button onclick="appendToResult('0')">0</button>
+                <button onclick="appendToResult('.')">.</button>
+                <button onclick="toggleSign()">+/-</button>
+            </div>
+        </div>
+
+        <script>
+            function appendToResult(value) {
+                const resultField = document.getElementById('result');
+                if (value === '.' && resultField.value.split(/[-+*/]/).pop().includes('.')) {
+                    return;
+                }
+                resultField.value += value;
+                const input = resultField.value;
+                const regex = /^\d+[-+*/]\d+(\.\d+)?$/;
+                if (regex.test(input) && !isNaN(input[input.length - 1])) {
+                    calculateResult(); 
+                }
+            }
+
+            function clearResult() {
+                document.getElementById('result').value = '';
+            }
+
+            function calculateResult() {
+                const resultField = document.getElementById('result');
+                try {
+                    resultField.value = eval(resultField.value);
+                } catch (error) {
+                    resultField.value = 'Error';
+                }
+            }
+
+            function toggleSign() {
+                const resultField = document.getElementById('result');
+                if (resultField.value ) {
+                    const currentValue = parseFloat(resultField.value);
+                    resultField.value = currentValue ? -currentValue : '';
+                }
+            }
+        </script>
+    </body>
+</html>
