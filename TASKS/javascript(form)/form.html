@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Form</title>
+    <style>
+        body, html {
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .flip-container {
+            perspective: 1000px;
+            width: 500px;
+            height: auto;
+            position: relative;
+        }
+        
+        .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .front, .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: #ede9e9;
+            padding: 37px;
+            border-radius: 14px;
+            box-shadow: 10px 9px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip-container">
+        <div class="flipper" id="flipper">
+            <div class="front">
+                <form id="contactForm">
+                    <h1>Contact Form</h1>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea><br><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="back">
+                <h1>Your Message</h1>
+                <p id="displayMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            document.getElementById('displayMessage').innerText = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+            document.getElementById('flipper').classList.add('flipped');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hide Effect Example</title>
+    <style>
+        #myElement {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(126, 178, 195);
+            transition: opacity 0.5s ease; 
+            opacity: 1; 
+
+    </style>
+</head>
+<body>
+
+<div id="myElement">information</div>
+<button id="hideButton">Hide</button>
+
+<script>
+    document.getElementById('hideButton').addEventListener('click', function() {
+        const element = document.getElementById('myElement');
+        element.style.opacity = '0';
+        setTimeout(() => {
+            element.style.display = 'none'; 
+        }, 400); 
+    });
+</script>
+
+</body>
+</html>

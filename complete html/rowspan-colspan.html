@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Table Layout</title>
+    <style>
+        table {
+            width: 40%;
+            text-align: center;
+            border-collapse:separate;
+            border: 3px, color(rgb(180, 180, 190));
+        }
+        td {
+            padding: 10px;
+            width: 20%;
+            border-style:groove;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="3">1</td>
+            <td>2</td>
+            <td >3</td>
+        </tr>
+        <tr>
+            <td colspan="3" rowspan="2">4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td colspan="2">11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td colspan="4">13</td>
+            <td rowspan="3">14</td>
+        </tr>
+        <tr>
+            <td colspan="4">15</td>
+        </tr>
+        <tr>
+            <td colspan="4">16</td>
+        </tr>
+    </table>
+</body>
+</html>

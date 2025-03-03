@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toggle Effect Example</title>
+    <style>
+        #myElement {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(126, 178, 195);
+            transition: opacity 0.5s ease; 
+            opacity: 0; 
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="myElement">information</div>
+<button id="toggleButton">Toggle</button>
+
+<script>
+    const element = document.getElementById('myElement');
+    
+    document.getElementById('toggleButton').addEventListener('click', () => {
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+            setTimeout(() => element.style.opacity = '1', 10);
+        } else {
+            element.style.opacity = '0';
+            setTimeout(() => element.style.display = 'none', 400);
+        }
+    });
+</script>
+</body>
+</html>

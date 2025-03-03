@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade-In Effect</title>
+    <style>
+        #box {
+            opacity: 0; 
+            background-color: rgb(18, 119, 152);
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            margin: 50px auto;
+            font-size: 40px;
+            border: 1px solid #a8bbde;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fade-In Effect Example</h2>
+    <button onclick="fadeInEffect()">Fade In</button>
+
+    <div id="box">Hello!</div>
+
+    <script>
+        function fadeInEffect() {
+            const element = document.getElementById("box");
+            let opacity = 0; 
+            element.style.display = "block"; 
+
+            const fadeIn = setInterval(function () {
+                if (opacity >= 1) {
+                    clearInterval(fadeIn); 
+                    } else {
+                    opacity += 0.04; 
+                    element.style.opacity = opacity; 
+                }
+            }, 100); 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Level Table</title>
+    <style>
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        th, td {
+            border: 2px solid rgb(128, 128, 128);
+            padding: 8px;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 4px;
+            background-size: 100%;
+            background-color: gray;
+        }
+        #column0{
+            background: #00ffff;
+            border: #00ffff;
+            font:bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption> My Multi-Level Table</caption>
+        <thead>
+            <tr>
+                <th rowspan="2" colspan="2"id="column0">Column 0</th>
+                <th rowspan="2">Column 1</th>
+                <th colspan="2">Column 2</th>
+            </tr>
+            <tr>
+                <th>Column 2a</th>
+                <th>Column 2b</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2"><b>Row 1</b></td>
+                <td><b>Row 1a</b></td>
+                <td>123</td>
+                <td>456</td>
+                <td>789</td>
+            </tr>
+            <tr>
+                <td><b>Row 1b</b></td>
+                <td>123</td>
+                <td>456</td>
+                <td>789</td>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Row 2</b></td>
+                <td>123</td>
+                <td>456</td>
+                <td>789</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

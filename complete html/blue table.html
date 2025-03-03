@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blue Table</title>
+    <style>
+        table {
+            width: 60%;
+            border: 2px #000;
+        }
+        th{
+            border: 2px solid ;
+            text-align: center;
+            border-color: black;
+        }
+         td {
+            border: 2px solid;
+            text-align: center;
+            padding: 10px;
+        }
+        .space{
+            color: #fffefe;
+            border-color: #fffefe;
+        }
+        .table{
+            border-color: #eae5e5;
+        }
+        .row{
+            writing-mode:vertical-rl;
+            transform: rotate(180deg);
+            height: auto;
+            width: 10px;
+        }
+        .color{
+            background: hwb(228 37% 27%);
+            text-orientation: upright ;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="8" class="table">Table</td>
+
+        </tr>
+        <tr>
+            <th colspan="2" rowspan="" class="space"> </th>
+            <th colspan="4" rowspan="2" class="color">column1</th>
+            <th colspan="8" class="color">column2</th>
+        </tr>
+        <tr>
+            <td colspan="2" class="space"></td>
+            <td colspan="4" class="color">column2.1</td>
+            <td colspan="4" class="color">column2.2</td>
+        </tr>
+        <tr>
+            <td rowspan="4" style="writing-mode:vertical-rl; transform: rotate(180deg); height: auto; width: 10px; background-color: #6082B6;">Row1</td>
+            <td rowspan="2" class="row" style=" background-color:hwb(228 38% 26% / 0.397);">Row1.1</td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td class="row" style="writing-mode:vertical-rl; transform: rotate(180deg); height: auto; width: 10px; background-color:hwb(228 38% 26% / 0.62);">Row1.2</td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2" class="row" style=" background-color:hwb(228 38% 26% / 0.397);">Row2</td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+            <td colspan="4" rowspan="2" style=" background-color:hwb(228 38% 26% / 0.397);"></td>
+        </tr>
+    </table>
+</body>
+</html>

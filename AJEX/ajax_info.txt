@@ -1,0 +1,6 @@
+AJEX information 
+
+
+
+
+The XMLHttpRequest Object
