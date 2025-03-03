@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onChange Event Example</title>
+</head>
+<body>
+    <h2>onChange Event Example</h2>
+
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" placeholder="Type something...">
+
+    <p id="output"> here...</p>
+
+    <script>
+        const inputElement = document.getElementById("nameInput");
+        const outputElement = document.getElementById("output");
+
+        inputElement.onchange = function() {
+            const newValue = inputElement.value; 
+            outputElement.textContent = "You changed the value to: " + newValue;
+        };
+    </script>
+</body>
+</html>
