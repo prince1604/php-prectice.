@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fade-Out Effect</title>
+    <style>
+        #box {
+            opacity: 1; 
+            background-color: rgb(18, 119, 152);
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            margin: 50px auto;
+            font-size: 40px;
+            border: 1px solid #a8bbde;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fade-out Effect Example</h2>
+    <button onclick="fadeoutEffect()">Fade out</button>
+
+    <div id="box">Hello!</div>
+
+    <script>
+        function fadeoutEffect() {
+            const element = document.getElementById("box");
+            let opacity = 1; 
+            element.style.display = "block"; 
+
+            const fadeOut = setInterval(function () {
+                if (opacity <= 0) {
+                    clearInterval(fadeOut); 
+                    element.style.display = "none"; 
+                } else {
+                    opacity -= 0.04; 
+                    element.style.opacity = opacity; 
+                }
+            }, 100); 
+        }
+    </script>
+</body>
+</html>

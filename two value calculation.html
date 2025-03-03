@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Operations</h1>
+    <div class="result" id="sum"></div>
+    <div class="result" id="difference"></div>
+    <div class="result" id="product"></div>
+    <div class="result" id="quotient"></div>
+
+    <script>
+        let num1 = 10;
+        let num2 = 50;
+
+        let sum = num1 + num2;
+        document.getElementById("sum").innerText = "Sum: " + sum;
+
+        let difference = num1 - num2;
+        document.getElementById("difference").innerText = "Difference: " + difference;
+
+        let product = num1 * num2;
+        document.getElementById("product").innerText = "Product: " + product;
+
+        let quotient = num1 / num2;
+        document.getElementById("quotient").innerText = "Quotient: " + quotient;
+    </script>
+</body>
+</html>

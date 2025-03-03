@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Textbox Value</title>
+</head>
+<body>
+    <h1>Get Textbox Value for console Example</h1>
+    <input type="text" id="myTextbox" placeholder="Enter something...">
+    <button onclick="getTextboxValue()">Submit</button>
+
+    <script>
+        function getTextboxValue() {
+            var textboxValue = document.getElementById("myTextbox").value;
+            if (textboxValue.trim() === "") {
+                alert("Enter any chrecter");
+            } else {
+                console.log(textboxValue);
+                alert(textboxValue);
+            }
+        }
+    </script>
+</body>
+</html>
