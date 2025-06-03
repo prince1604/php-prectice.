@@ -140,7 +140,7 @@ Contributions are welcome!
 ## 📬 Contact
 
 📢 GitHub: [@prince1604](https://github.com/prince1604)
-🚳 Report Issues: [Open here](https://github.com/prince1604/php-prectice/issues)
+🚳 Report Issues: [Open here](princekothiya1604@gmail.com)
 
 ---
 
